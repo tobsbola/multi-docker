@@ -1,0 +1,36 @@
+{
+    "AWSEBDockerrunVersion": 2,
+    "containerDefinitions": [
+        {
+            "name": "client",
+            "image": "tobsbola/multi-client",
+            "hostname": "client",
+            "essential": false 
+        },
+        {
+            "name": "server",
+            "image": "tobsbola/multi-server",
+            "hostname": "api",
+            "essential": false 
+        },
+        {
+            "name": "worker",
+            "image": "tobsbola/multi-worker",
+            "hostname": "worker",
+            "essential": false 
+        },
+        {
+            "name": "nginx",
+            "image": "tobsbola/multi-nginx",
+            "hostname": "client",
+            "essential": true,
+            "portMappings": [
+                { 
+                    "hostPort": 80,
+                    "containerPort": 80
+                }
+            ],
+            "links": ["client", "server"]
+        }
+    ]
+}
