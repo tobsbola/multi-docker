@@ -3,7 +3,7 @@ services:
   - docker
 
 before_install:
-  - docker build -t tobsbola/react-test -f ./client/Dockerfile.dev
+  - docker build -t tobsbola/react-test -f ./client/Dockerfile.dev ./client
 
 script:
   - docker run tobsbola/react-test yarn test -- --coverage
