@@ -34,7 +34,6 @@ const redisClient = redis.createClient({
 const redisPublisher = redisClient.duplicate();
 
 // Express route handlers
-
 app.get('/', (req, res) => {
   res.send('Hi');
 });
@@ -65,6 +64,4 @@ app.post('/values', async (req, res) => {
   res.send({ working: true });
 });
 
-app.listen(5000, err => {
-  console.log('Listening');
-});
+app.listen(5000, err => console.log('Listening'));
