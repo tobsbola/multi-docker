@@ -25,7 +25,7 @@
         {
             "name": "nginx",
             "image": "tobsbola/multi-nginx",
-            "hostname": "client",
+            "hostname": "nginx",
             "essential": true,
             "portMappings": [
                 { 
